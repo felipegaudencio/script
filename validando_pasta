@@ -1,0 +1,14 @@
+@ECHO OFF
+
+set /p LISTA=Digite: 
+cd c:\pstools
+
+for /f %%H in (%LISTA%.txt) do if exist "\\%%H\c$\Program Files\NDDigital\nddPrint\Agent" (
+
+    echo "%%H" >> c:\pstools\instalado.txt
+    
+    ) else (
+       echo "%%H" >> c:\pstools\nao_instalado.txt
+    )
+
+    pause
